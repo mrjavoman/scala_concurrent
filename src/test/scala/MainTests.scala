@@ -11,11 +11,23 @@ import org.scalatest.junit.JUnitRunner
 @RunWith(classOf[JUnitRunner])
 class MainTests extends FunSuite {
 
-  import Main_Concurrent.testMethod
+  import primelib.isPrimeInt
+  import primelib.isPrimeBigInt
 
-  test("works?") {
-    assert(testMethod() == 1)
+  test("5 is prime") {
+    assert(isPrimeInt(5) == true)
   }
 
+  test("10 is not  prime") {
+    assert(isPrimeInt(10) == false)
+  }
+
+  test("531 is not prime") {
+    assert(isPrimeInt(531) == false)
+  }
+
+  test("2349592604443933364L not prime "){
+    assert(isPrimeBigInt(2349592604443933364L) == false)
+  }
 }
 
